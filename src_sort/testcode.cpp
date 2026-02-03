@@ -26,9 +26,6 @@ int main() {
         return 1;
     }
 
-    // ===============================
-    // Parse dữ liệu
-    // ===============================
     vector<double> a;
     a.reserve(1'000'000);
 
@@ -37,16 +34,14 @@ int main() {
         char* end;
         double x = strtod(ptr, &end);
         if (ptr == end) {
-            ++ptr;        // bỏ ký tự không hợp lệ
+            ++ptr;      
         } else {
             a.push_back(x);
             ptr = end;
         }
     }
 
-    // ===============================
-    // Đo thời gian sort
-    // ===============================
+    
     auto start = high_resolution_clock::now();
     sort(a.begin(), a.end());
     auto stop = high_resolution_clock::now();
@@ -59,3 +54,4 @@ int main() {
 
     return 0;
 }
+
